@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/sprites - spike/character_0012.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites - spike/character_0013.png" type="Texture" id=2]
+[ext_resource path="res://Spike.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "moving",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5.79509, 5.95396 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 7.97095, 8.00803 )
+
+[node name="Spike" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 67
+script = ExtResource( 3 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "moving"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.557053, 4.35777 )
+shape = SubResource( 2 )
+
+[node name="floor_checker" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 20 )
+collision_mask = 2
+
+[node name="collision_checker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 65
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collision_checker"]
+position = Vector2( -0.735779, 1.26135 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="collision_checker" to="." method="_on_collision_checker_body_entered"]

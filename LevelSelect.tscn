@@ -1,0 +1,160 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/fonts/yoster.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ButtonTitle.gd" type="Script" id=2]
+[ext_resource path="res://LevelButton.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 34
+outline_size = 2
+outline_color = Color( 0.00392157, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="LevelSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.113725, 0.756863, 0.882353, 1 )
+
+[node name="LevelButtons" type="Node2D" parent="."]
+position = Vector2( -9, -63 )
+scale = Vector2( 1.3, 1.3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ButtonLevel1" type="Button" parent="LevelButtons"]
+margin_left = 145.385
+margin_top = 166.154
+margin_right = 244.385
+margin_bottom = 265.154
+focus_mode = 0
+custom_fonts/font = SubResource( 1 )
+enabled_focus_mode = 0
+text = "1"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonLevel2" type="Button" parent="LevelButtons"]
+margin_left = 353.077
+margin_top = 166.154
+margin_right = 452.077
+margin_bottom = 265.154
+focus_mode = 0
+custom_fonts/font = SubResource( 1 )
+enabled_focus_mode = 0
+text = "2"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonLevel3" type="Button" parent="LevelButtons"]
+margin_left = 560.769
+margin_top = 166.154
+margin_right = 659.769
+margin_bottom = 265.154
+focus_mode = 0
+custom_fonts/font = SubResource( 1 )
+enabled_focus_mode = 0
+text = "3"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonLevel4" type="Button" parent="LevelButtons"]
+margin_left = 145.385
+margin_top = 297.692
+margin_right = 244.385
+margin_bottom = 396.692
+focus_mode = 0
+custom_fonts/font = SubResource( 1 )
+enabled_focus_mode = 0
+text = "4"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonLevel5" type="Button" parent="LevelButtons"]
+margin_left = 353.077
+margin_top = 297.692
+margin_right = 452.077
+margin_bottom = 396.692
+focus_mode = 0
+custom_fonts/font = SubResource( 1 )
+enabled_focus_mode = 0
+text = "5"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonLevel6" type="Button" parent="LevelButtons"]
+margin_left = 560.769
+margin_top = 297.692
+margin_right = 659.769
+margin_bottom = 396.692
+focus_mode = 0
+custom_fonts/font = SubResource( 1 )
+enabled_focus_mode = 0
+text = "6"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 54.0
+margin_right = 1026.0
+margin_bottom = 105.0
+custom_fonts/font = SubResource( 2 )
+text = "Level Select"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonTitle" type="Button" parent="."]
+margin_top = 495.0
+margin_right = 1026.0
+margin_bottom = 558.0
+focus_mode = 0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.298039, 0.294118, 0.819608, 1 )
+custom_colors/font_color_pressed = Color( 0.00392157, 0.0235294, 0.0941176, 1 )
+enabled_focus_mode = 0
+text = "BACK TO TITLE"
+flat = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="LevelButtons/ButtonLevel1" to="LevelButtons/ButtonLevel1" method="_on_LevelButton_pressed"]
+[connection signal="pressed" from="LevelButtons/ButtonLevel2" to="LevelButtons/ButtonLevel2" method="_on_LevelButton_pressed"]
+[connection signal="pressed" from="LevelButtons/ButtonLevel3" to="LevelButtons/ButtonLevel3" method="_on_LevelButton_pressed"]
+[connection signal="pressed" from="LevelButtons/ButtonLevel4" to="LevelButtons/ButtonLevel4" method="_on_LevelButton_pressed"]
+[connection signal="pressed" from="LevelButtons/ButtonLevel5" to="LevelButtons/ButtonLevel5" method="_on_LevelButton_pressed"]
+[connection signal="pressed" from="LevelButtons/ButtonLevel6" to="LevelButtons/ButtonLevel6" method="_on_LevelButton_pressed"]
+[connection signal="pressed" from="ButtonTitle" to="ButtonTitle" method="_on_ButtonTitle_pressed"]

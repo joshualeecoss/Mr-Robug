@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://GroundTiles.tres" type="TileSet" id=1]
+[ext_resource path="res://MovingPlatform.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 64, 8 )
+
+[node name="MovingPlatform" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 69
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65532, 52, 0, 65533, 53, 0, 65534, 53, 0, 65535, 53, 0, 0, 53, 0, 1, 53, 0, 2, 53, 0, 3, 54, 0 )

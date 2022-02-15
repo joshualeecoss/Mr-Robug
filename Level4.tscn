@@ -1,0 +1,151 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Lock.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Flag.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Doorway.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Key.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Spring.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Robot.tscn" type="PackedScene" id=7]
+[ext_resource path="res://MovingPlatform.tscn" type="PackedScene" id=8]
+[ext_resource path="res://PopUp.tscn" type="PackedScene" id=9]
+[ext_resource path="res://OneWayTiles.tres" type="TileSet" id=10]
+[ext_resource path="res://GroundTiles.tres" type="TileSet" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 585, 27 )
+
+[node name="Level4" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1035.0
+margin_bottom = 666.0
+color = Color( 0.298039, 0.294118, 0.819608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Flag" parent="." instance=ExtResource( 2 )]
+position = Vector2( 270, -18 )
+rotation = 3.14159
+
+[node name="GroundTiles" type="TileMap" parent="."]
+tile_set = ExtResource( 11 )
+cell_size = Vector2( 18, 18 )
+cell_quadrant_size = 18
+cell_custom_transform = Transform2D( 18, 0, 0, 18, 0, 0 )
+collision_layer = 2
+collision_mask = 69
+format = 1
+tile_data = PoolIntArray( 65535, 47, 0, 57, 45, 0, 131071, 47, 0, 65593, 45, 0, 196607, 47, 0, 131129, 45, 0, 262143, 47, 0, 196665, 45, 0, 327679, 47, 0, 262201, 45, 0, 393215, 47, 0, 327737, 45, 0, 458751, 47, 0, 393264, 14, 0, 393265, 14, 0, 393273, 45, 0, 524287, 47, 0, 458800, 14, 0, 458801, 14, 0, 458809, 45, 0, 589823, 47, 0, 524336, 14, 0, 524337, 14, 0, 524345, 45, 0, 655359, 47, 0, 589831, 9, 0, 589872, 14, 0, 589873, 14, 0, 589881, 45, 0, 720895, 47, 0, 655367, 8, 0, 655408, 14, 0, 655409, 14, 0, 655417, 45, 0, 786431, 47, 0, 720901, 1, 0, 720902, 2, 0, 720903, 2, 0, 720904, 2, 0, 720905, 2, 0, 720906, 2, 0, 720907, 3, 0, 720938, 1, 0, 720939, 2, 0, 720940, 2, 0, 720941, 2, 0, 720942, 2, 0, 720943, 2, 0, 720944, 2, 0, 720945, 3, 0, 720953, 45, 0, 851967, 47, 0, 786489, 45, 0, 917503, 47, 0, 852025, 45, 0, 983039, 47, 0, 917561, 45, 0, 1048575, 47, 0, 983097, 45, 0, 1114111, 47, 0, 1048633, 45, 0, 1179647, 47, 0, 1114169, 45, 0, 1245183, 47, 0, 1179705, 45, 0, 1310719, 47, 0, 1245241, 45, 0, 1376255, 47, 0, 1310777, 45, 0, 1441791, 47, 0, 1376313, 45, 0, 1507327, 47, 0, 1441849, 45, 0, 1572863, 47, 0, 1507385, 45, 0, 1638399, 47, 0, 1572914, 11, 0, 1572915, 12, 0, 1572916, 12, 0, 1572917, 12, 0, 1572918, 12, 0, 1572919, 12, 0, 1572920, 12, 0, 1572921, 12, 0, 1572922, 12, 0, 1703935, 47, 0, 1638450, 45, 0, 1638451, 46, 0, 1638452, 46, 0, 1638453, 46, 0, 1638454, 46, 0, 1638455, 46, 0, 1638456, 46, 0, 1638457, 46, 0, 1638458, 46, 0, 1769471, 47, 0, 1703986, 45, 0, 1703987, 46, 0, 1703988, 46, 0, 1703989, 46, 0, 1703990, 46, 0, 1703991, 46, 0, 1703992, 46, 0, 1703993, 46, 0, 1703994, 46, 0, 1835007, 47, 0, 1769522, 45, 0, 1769523, 46, 0, 1769524, 46, 0, 1769525, 46, 0, 1769526, 46, 0, 1769527, 46, 0, 1769528, 46, 0, 1769529, 46, 0, 1769530, 46, 0, 1900543, 47, 0, 1835058, 45, 0, 1835059, 46, 0, 1835060, 46, 0, 1835061, 46, 0, 1835062, 46, 0, 1835063, 46, 0, 1835064, 46, 0, 1835065, 46, 0, 1835066, 46, 0, 1966079, 47, 0, 1900594, 45, 0, 1900595, 46, 0, 1900596, 46, 0, 1900597, 46, 0, 1900598, 46, 0, 1900599, 46, 0, 1900600, 46, 0, 1900601, 46, 0, 1900602, 46, 0, 2031615, 47, 0, 1966130, 45, 0, 1966131, 46, 0, 1966132, 46, 0, 1966133, 46, 0, 1966134, 46, 0, 1966135, 46, 0, 1966136, 46, 0, 1966137, 46, 0, 1966138, 46, 0, 2031624, 1, 0, 2031625, 2, 0, 2031626, 2, 0, 2031627, 2, 0, 2031628, 2, 0, 2031629, 2, 0, 2031630, 2, 0, 2031631, 2, 0, 2031632, 2, 0, 2031633, 2, 0, 2031634, 2, 0, 2031635, 2, 0, 2031636, 3, 0, 2031666, 45, 0, 2031667, 46, 0, 2031668, 46, 0, 2031669, 46, 0, 2031670, 46, 0, 2031671, 46, 0, 2031672, 46, 0, 2031673, 46, 0, 2031674, 46, 0, 2097202, 45, 0, 2097203, 46, 0, 2097204, 46, 0, 2097205, 46, 0, 2097206, 46, 0, 2097207, 46, 0, 2097208, 46, 0, 2097209, 46, 0, 2097210, 46, 0, 2162738, 45, 0, 2162739, 46, 0, 2162740, 46, 0, 2162741, 46, 0, 2162742, 46, 0, 2162743, 46, 0, 2162744, 46, 0, 2162745, 46, 0, 2162746, 46, 0, 2228274, 45, 0, 2228275, 46, 0, 2228276, 46, 0, 2228277, 46, 0, 2228278, 46, 0, 2228279, 46, 0, 2228280, 46, 0, 2228281, 46, 0, 2228282, 46, 0, 2293810, 45, 0, 2293811, 46, 0, 2293812, 46, 0, 2293813, 46, 0, 2293814, 46, 0, 2293815, 46, 0, 2293816, 46, 0, 2293817, 46, 0, 2293818, 46, 0, 2359346, 45, 0, 2359347, 46, 0, 2359348, 46, 0, 2359349, 46, 0, 2359350, 46, 0, 2359351, 46, 0, 2359352, 46, 0, 2359353, 46, 0, 2359354, 46, 0, 2424882, 45, 0, 2424883, 46, 0, 2424884, 46, 0, 2424885, 46, 0, 2424886, 46, 0, 2424887, 46, 0, 2424888, 46, 0, 2424889, 46, 0, 2424890, 46, 0, 2490418, 45, 0, 2490419, 46, 0, 2490420, 46, 0, 2490421, 46, 0, 2490422, 46, 0, 2490423, 46, 0, 2490424, 46, 0, 2490425, 46, 0, 2490426, 46, 0 )
+
+[node name="OneWayTiles" type="TileMap" parent="."]
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 18, 18 )
+cell_quadrant_size = 18
+cell_custom_transform = Transform2D( 18, 0, 0, 18, 0, 0 )
+format = 1
+
+[node name="doorway" parent="." instance=ExtResource( 3 )]
+position = Vector2( 135, 189 )
+
+[node name="Key" parent="." instance=ExtResource( 4 )]
+position = Vector2( 981, 423 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 279, 549 )
+
+[node name="Robot" parent="." instance=ExtResource( 7 )]
+position = Vector2( 837, 189 )
+
+[node name="PopUp" parent="." instance=ExtResource( 9 )]
+
+[node name="MovingPlatforms" type="Node2D" parent="."]
+
+[node name="MovingPlatform" parent="MovingPlatforms" instance=ExtResource( 8 )]
+position = Vector2( 495, 522 )
+speed = 70
+
+[node name="MovingPlatform4" parent="MovingPlatforms" instance=ExtResource( 8 )]
+position = Vector2( 711, 468 )
+speed = 70
+direction = 1
+
+[node name="MovingPlatform5" parent="MovingPlatforms" instance=ExtResource( 8 )]
+position = Vector2( 540, 402 )
+speed = 70
+
+[node name="MovingPlatform8" parent="MovingPlatforms" instance=ExtResource( 8 )]
+position = Vector2( 189, 306 )
+speed = 70
+
+[node name="MovingPlatform9" parent="MovingPlatforms" instance=ExtResource( 8 )]
+position = Vector2( -18, 246 )
+speed = 0
+max_left = 0
+max_right = 0
+
+[node name="MovingPlatform6" parent="MovingPlatforms" instance=ExtResource( 8 )]
+position = Vector2( 351, 354 )
+speed = 70
+direction = 1
+
+[node name="MovingPlatform2" parent="MovingPlatforms" instance=ExtResource( 8 )]
+position = Vector2( 621, 234 )
+speed = 70
+direction = 1
+
+[node name="Spring" parent="MovingPlatforms/MovingPlatform2" instance=ExtResource( 6 )]
+position = Vector2( 0, -3 )
+
+[node name="MovingPlatform7" parent="MovingPlatforms" instance=ExtResource( 8 )]
+position = Vector2( 621, 234 )
+speed = 70
+direction = 1
+
+[node name="MovingPlatform3" parent="MovingPlatforms" instance=ExtResource( 8 )]
+position = Vector2( 387, 204 )
+speed = 70
+
+[node name="Spring" parent="MovingPlatforms/MovingPlatform3" instance=ExtResource( 6 )]
+position = Vector2( 0, -3 )
+
+[node name="MovingPlatform10" parent="MovingPlatforms" instance=ExtResource( 8 )]
+position = Vector2( 387, 204 )
+speed = 70
+
+[node name="Locks" type="Node2D" parent="."]
+
+[node name="Lock" parent="Locks" instance=ExtResource( 1 )]
+position = Vector2( 819, 189 )
+
+[node name="Lock2" parent="Locks" instance=ExtResource( 1 )]
+position = Vector2( 135, 189 )
+
+[node name="Lock3" parent="Locks" instance=ExtResource( 1 )]
+position = Vector2( 855, 189 )
+
+[node name="Lock4" parent="Locks" instance=ExtResource( 1 )]
+position = Vector2( 837, 171 )
+
+[node name="fallzone" type="Area2D" parent="."]
+position = Vector2( 369, 672 )
+collision_layer = 8
+collision_mask = 65
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fallzone"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="doorway" to="Player" method="_on_doorway_body_entered"]
+[connection signal="body_entered" from="doorway" to="Robot" method="_on_doorway_body_entered"]
+[connection signal="key_collected" from="Key" to="Locks/Lock" method="_on_key_collected"]
+[connection signal="key_collected" from="Key" to="Player" method="_on_key_collected"]
+[connection signal="key_collected" from="Key" to="Locks/Lock3" method="_on_key_collected"]
+[connection signal="key_collected" from="Key" to="Locks/Lock2" method="_on_key_collected"]
+[connection signal="key_collected" from="Key" to="Locks/Lock4" method="_on_key_collected"]
+[connection signal="robot_complete" from="Robot" to="Player" method="_on_Robot_robot_complete"]
+[connection signal="body_entered" from="fallzone" to="Player" method="_on_fallzone_body_entered"]
+[connection signal="body_entered" from="fallzone" to="Robot" method="_on_fallzone_body_entered"]

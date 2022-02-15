@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Windle-Pixels-8-Bit-Circus_Looping.mp3-11ebb721b6630df64b1371990c52b3a4.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Windle-Pixels-8-Bit-Circus_Looping.mp3"
+dest_files=[ "res://.import/Windle-Pixels-8-Bit-Circus_Looping.mp3-11ebb721b6630df64b1371990c52b3a4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

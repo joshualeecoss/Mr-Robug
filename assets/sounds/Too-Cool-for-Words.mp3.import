@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Too-Cool-for-Words.mp3-b9c687ecab9b923ddb9039635017353c.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Too-Cool-for-Words.mp3"
+dest_files=[ "res://.import/Too-Cool-for-Words.mp3-b9c687ecab9b923ddb9039635017353c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
